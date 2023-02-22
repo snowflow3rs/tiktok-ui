@@ -1,9 +1,11 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 :root {
     --primary: #fe2c55;
+    --white: white;
+    --border-radius-input: 92px;
 }
-
 html {
     font-size: 62.5%;
 }
@@ -13,8 +15,45 @@ html {
     margin: 0;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Proxima Nova', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
+}
+
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a[href],
+to {
+    text-decoration: none;
+}
+//font embedded
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('~/src/assets/fonts/Proxima-Nova-Bold.woff2');
+}
+// custom tippy tooltip
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        background-color: rgba(84, 84, 84, 0.92);
+        color: rgb(255, 255, 255);
+        padding: 3px;
+        outline: none;
+        text-decoration: none;
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow {
+        top: -1px;
+    }
 }

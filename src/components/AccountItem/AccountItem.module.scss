@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    &img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.info {
+    flex: 1;
+    margin-left: 10px;
+    align-items: center;
+}
+.tagname {
+    line-height: 22px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: rgba(22, 24, 35, 1);
+
+    & .icon {
+        color: rgb(32, 213, 236);
+        margin-left: 8px;
+        font-style: 1.2rem;
+    }
+}
+.username {
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: rgba(22, 24, 35, 0.5);
+}
+
+h4,
+span {
+    font-family: 'Proxima Nova', sans-serif;
+}

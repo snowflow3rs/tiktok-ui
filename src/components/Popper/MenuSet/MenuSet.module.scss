@@ -1,0 +1,45 @@
+//Menu wrapper Setting
+.menu-content {
+    width: 223px;
+
+    transform: translateY(2px);
+
+    .menu-items {
+        justify-content: flex-start;
+        color: black;
+        height: 42px;
+        font-size: 1.5rem;
+
+        &.separate {
+            border-top: 1px solid#e5e5e5;
+        }
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+    }
+}
+
+//Menu items setting
+//Menu header
+
+.header {
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.back-btn {
+    background: transparent;
+    font-size: 1.6rem;
+    cursor: pointer;
+    width: 20px;
+    margin-left: 33px;
+}
+.header-title {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
