@@ -14,9 +14,10 @@ function AccountItems({ data }) {
     return (
         <div>
             <Tippy
+                appendTo={document.body}
                 delay={[600, 0]}
                 interactive
-                zIndex="9999"
+                zIndex="99"
                 placement="bottom-start"
                 render={(attrs) => (
                     <div className={cx('preview-user')} tabIndex="-1" {...attrs}>
