@@ -3,9 +3,10 @@
     align-items: center;
     padding: 9px 16px;
     cursor: pointer;
+    height: 60px;
 
     &:hover {
-        background-color: rgba(22, 24, 35, 0.06);
+        background-color: var(--background-gray-color-06);
     }
 }
 
@@ -28,7 +29,7 @@
     line-height: 22px;
     font-weight: 600;
     font-size: 1.6rem;
-    color: rgba(22, 24, 35, 1);
+    color: var(--text-color);
 
     & .icon {
         color: rgb(32, 213, 236);
@@ -40,10 +41,10 @@
     line-height: 20px;
     font-weight: 400;
     font-size: 1.4rem;
-    color: rgba(22, 24, 35, 0.5);
+    color: var(--background-gray-color-05);
 }
 
 h4,
 span {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: var(--font-family);
 }

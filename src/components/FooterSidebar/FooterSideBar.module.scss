@@ -1,0 +1,40 @@
+.wrapper {
+    padding-top: 16px;
+    padding-left: 8px;
+    position: relative;
+    border-radius: 4px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        height: 1px;
+        background: var(--background-gray-color-12);
+    }
+}
+
+.content-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.link {
+    font-weight: 600;
+
+    font-size: 1.2rem;
+    line-height: 17px;
+    cursor: pointer;
+    color: var(--background-gray-color-05);
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.link {
+    margin-right: 6px;
+    margin-top: 5px;
+}

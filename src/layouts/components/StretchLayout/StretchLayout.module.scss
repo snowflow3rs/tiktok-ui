@@ -1,0 +1,21 @@
+.wrapper {
+    width: 100%;
+}
+.container {
+    display: flex;
+    margin-top: 60px;
+}
+.contents {
+    display: flex;
+
+    flex: 1 1 auto;
+    padding-top: 32px;
+    margin-left: 240px;
+    width: 100%;
+    padding: 32px 24px;
+    box-sizing: content-box;
+    background-color: var(--background-color-white);
+    min-height: calc(100vh - 59px);
+}
+.aside {
+}

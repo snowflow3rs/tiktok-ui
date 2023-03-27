@@ -1,0 +1,31 @@
+.wrapper {
+    width: 348px;
+
+    background-color: var(--background-color-white);
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    padding: 20px 0 26px 8px;
+    max-height: 100%;
+    overflow-x: auto;
+    overflow-y: overlay;
+    &.shrink {
+        width: 240px;
+    }
+    &:hover {
+        &::-webkit-scrollbar {
+            width: 6px;
+            max-height: 100%;
+            padding: 0 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background: var(--scroll-bg-sb);
+        }
+    }
+
+    &:not(:hover)::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+}

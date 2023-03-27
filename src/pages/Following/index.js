@@ -1,4 +1,5 @@
+import Main from '~/layouts/components/Main/Main';
 function Following() {
-    return <h2>Following page</h2>;
+    return <Main />;
 }
 export default Following;

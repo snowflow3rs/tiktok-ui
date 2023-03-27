@@ -1,0 +1,68 @@
+.wrapper {
+    padding: 20px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    width: 280px;
+}
+.avatar {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.btn {
+    width: 106px;
+    padding: 5px 18px;
+}
+.infor {
+    display: flex;
+    align-items: center;
+}
+.nickname {
+    color: var(--text-color);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 22px;
+}
+.icon {
+    width: 14px;
+    height: 14px;
+    color: rgb(32, 213, 236);
+    margin-left: 4px;
+}
+.name {
+    color: var(--text-color);
+
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 20px;
+    opacity: 0.8;
+}
+.stat {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+.value {
+    font-weight: 700;
+    margin-right: 6px;
+    font-size: 1.7rem;
+    line-height: 20px;
+    color: var(--text-color);
+}
+.label {
+    color: var(--background-gray-color-75);
+    font-size: 1.7rem;
+    line-height: 20px;
+    font-weight: 400;
+}
+.value ~ .value {
+    margin-left: 20px;
+}

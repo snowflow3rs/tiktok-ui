@@ -1,0 +1,69 @@
+.result-item {
+    display: flex;
+    padding: 16px;
+    padding-right: 0;
+
+    position: relative;
+
+    &:hover {
+        background-color: var(--background-gray-color-248);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        top: initial;
+        height: 1px;
+        transform: scaleY(0.5);
+        transform-origin: center bottom;
+        background-color: var(--background-gray-color-02);
+    }
+}
+.avatar {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.body {
+    line-height: 20px;
+    margin-left: 16px;
+}
+.username {
+    line-height: 25px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.name {
+}
+.info {
+    display: flex;
+    align-items: center;
+    margin-top: 1px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.infor-name {
+    margin-right: 4px;
+}
+
+.count-follower {
+    font-weight: 600;
+    margin-left: 4px;
+}
+.icon {
+    width: 14px;
+    height: 14px;
+    color: rgb(32, 213, 236);
+    margin-left: 4px;
+}
+.bio {
+    margin-top: 4px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}

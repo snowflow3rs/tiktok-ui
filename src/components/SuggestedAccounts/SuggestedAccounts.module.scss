@@ -1,0 +1,84 @@
+.wrapper {
+    padding: 16px 0;
+    position: relative;
+    border-radius: 4px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        height: 1px;
+        background: var(--background-gray-color-12);
+    }
+}
+
+.title {
+    color: var(--text-color);
+    padding: 0 8px;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    line-height: 20px;
+    opacity: 0.8;
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+//items
+.account-items {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    height: 48px;
+    width: 100%;
+
+    max-width: 340px;
+    transition: background-color ease-in-out 200ms;
+    &:hover {
+        background-color: var(--background-gray-color-03);
+    }
+}
+
+.nickname {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+.infor {
+    flex: 1;
+    margin-left: 12px;
+}
+.icon {
+    width: 14px;
+    height: 14px;
+    color: rgb(32, 213, 236);
+    margin-left: 4px;
+}
+
+.name {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 15px;
+    opacity: 0.6;
+}
+.more-btn {
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 20px;
+    padding: 0px 8px;
+    margin-top: 8px;
+}
+
+//popper
+.wrapper-popperr {
+    height: 171px;
+    z-index: 9999999;
+}

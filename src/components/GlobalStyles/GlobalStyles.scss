@@ -1,10 +1,47 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+// @import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 :root {
     --primary: #fe2c55;
     --white: white;
     --border-radius-input: 92px;
+    --font-family: 'Proxima Nova', sans-serif;
+    --background-gray-color-02: rgba(22, 24, 35, 0.2);
+    --background-gray-color-03: rgba(22, 24, 35, 0.03);
+    --background-gray-color-06: rgba(22, 24, 35, 0.06);
+    --background-gray-color-34: rgba(22, 24, 35, 0.34);
+    --background-gray-color-05: rgba(22, 24, 35, 0.5);
+    --background-gray-color-75: rgba(22, 24, 35, 0.75);
+    --background-gray-color-12: rgba(22, 24, 35, 0.12);
+    --background-gray-color-09: rgba(22, 24, 35, 0.9);
+    --background-gray-color-1: rgba(22, 24, 35, 1);
+    --background-gray-color-08: var(--white);
+    --background-search: rgba(22, 24, 35, 0.06);
+    --text-color: rgb(22, 24, 35);
+    --background-gray-color-248: rgb(248, 248, 248);
+    --background-color-tippy: rgba(84, 84, 84, 0.92);
+
+    --background-color: rgb(18, 18, 18);
+    --background-color-white: white;
+    --popper-background: white;
+
+    --box-shadow-header: 0px 1px 1px rgb(0 0 0 / 12%);
+
+    --btn-outline: rgba(254, 44, 85, 0.06);
+    --btn-bg-outline: white;
+
+    --btn-hov-bg: rgba(254, 44, 85, 0.06);
+    --scroll-bg-sb: rgba(0, 0, 0, 0.05);
+
+    --get-bg: rgba(255, 255, 255, 1);
+
+    --line-bg: rgba(0, 0, 0, 0.12);
+
+    --hover-bg-op: rgba(22, 24, 35, 0.03);
+
+    --up-bg: rgba(255, 255, 255, 1);
+
+    --login-bg: rgba(255, 255, 255, 1);
 }
 html {
     font-size: 62.5%;
@@ -15,12 +52,28 @@ html {
     margin: 0;
 }
 body {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
-    text-rendering: optimizespeed;
+    overflow-y: overlay;
+    &.hidden {
+        overflow: hidden;
+    }
+}
+//scroll bar
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
 }
 
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--background-gray-color-06);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: transparent;
+}
 button,
 input,
 [tabindex] {
@@ -30,6 +83,7 @@ input,
 
 a[href],
 to {
+    white-space: nowrap;
     text-decoration: none;
 }
 //font embedded
@@ -49,6 +103,7 @@ body {
         padding: 3px;
         outline: none;
         text-decoration: none;
+        transition: all 400ms cubic-bezier(0.65, 0, 0.35, 1) 0s;
     }
     .tippy-arrow {
         color: rgba(84, 84, 84, 0.92);
@@ -56,4 +111,67 @@ body {
     .tippy-box[data-placement^='bottom'] > .tippy-arrow {
         top: -1px;
     }
+}
+//switch theme color
+
+[data-theme='dark'] {
+    --primary: #fe2c55;
+    --white: white;
+    --border-radius-input: 92px;
+    --background-gray-color-248: rgb(18, 18, 18);
+    --background-gray-color-02: rgba(255, 255, 255, 0.2);
+    --background-gray-color-03: rgba(255, 255, 255, 0.03);
+
+    --background-gray-color-34: rgba(255, 255, 255, 0.34);
+    --background-gray-color-05: rgba(255, 255, 255, 0.5);
+    --background-gray-color-08: rgba(255, 255, 255, 0.08);
+    --background-gray-color-06: rgba(255, 255, 255, 0.06);
+    --background-gray-color-75: rgba(225, 225, 225, 0.75);
+    --background-gray-color-12: rgba(255, 255, 255, 0.12);
+    --background-gray-color-1: rgba(22, 24, 35, 1);
+    --background-gray-color-09: rgba(255, 255, 255, 0.9);
+    --text-color: rgba(255, 255, 255, 0.9);
+
+    --background-color-tippy: rgba(84, 84, 84, 0.92);
+
+    --background-color: white;
+    --background-color-white: rgb(18, 18, 18);
+
+    //icon
+
+    --icon-background-gray-color-75: rgba(255, 255, 255, 0.75);
+    //search
+
+    --background-search: rgba(255, 255, 255, 0.12);
+    //popper
+    --popper-background: #2f2f2f;
+    //box -shadow
+    --box-shadow-header: rgb(255 255 255 / 12%) 0px 1px 1px;
+
+    //btn
+
+    --btn-outline: rgba(254, 44, 85, 0.06);
+    --btn-bg-outline: rgba(255, 255, 255, 0.08);
+
+    //hov-log-side
+    --btn-hov-bg: #201416;
+
+    //scrollbar
+
+    --scroll-bg-sb: rgba(255, 255, 255, 0.06);
+    --scroll-bg-al: rgba(22, 24, 35, 0.06);
+
+    //getapp
+    --get-bg: rgb(46, 46, 46);
+
+    //line
+
+    --line-bg: rgb(18, 18, 18);
+
+    //hover popper menu
+    --hover-bg-op: rgba(255, 255, 255, 0.04);
+
+    --up-bg: rgba(255, 255, 255, 0.04);
+
+    --login-bg: #252525;
 }

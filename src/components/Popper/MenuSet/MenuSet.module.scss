@@ -5,18 +5,27 @@
     transform: translateY(2px);
 
     .menu-items {
+        display: flex;
         justify-content: flex-start;
-        color: black;
+        color: var(--text-color);
         height: 42px;
         font-size: 1.5rem;
+        width: 100%;
+        background-color: var(--popper-background);
 
-        &.separate {
-            border-top: 1px solid#e5e5e5;
-        }
         &:hover {
-            background-color: rgba(22, 24, 35, 0.03);
+            background-color: var(--background-gray-color-03);
         }
     }
+}
+
+.separate {
+    border-top: 1px solid#e5e5e5;
+}
+.menu-body {
+    overflow-y: auto;
+}
+.theme {
 }
 
 //Menu items setting
@@ -27,6 +36,9 @@
     position: relative;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
+
+    color: var(--text-color);
 }
 .back-btn {
     background: transparent;
@@ -34,6 +46,7 @@
     cursor: pointer;
     width: 20px;
     margin-left: 33px;
+    color: var(--text-color);
 }
 .header-title {
     position: absolute;

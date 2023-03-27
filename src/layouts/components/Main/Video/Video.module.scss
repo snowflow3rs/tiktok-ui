@@ -1,0 +1,237 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 692px;
+    position: relative;
+    padding: 20px 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background: rgba(22, 24, 35, 0.12);
+    }
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.infor {
+    display: flex;
+}
+.user-infor {
+    width: 510px;
+    display: flex;
+    align-items: center;
+}
+.wrap-infor {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+}
+.nickname {
+    font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 25px;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-right: 4px;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.icon {
+    width: 14px;
+    height: 14px;
+    color: rgb(32, 213, 236);
+    margin-left: 4px;
+}
+.name {
+    margin-left: 4px;
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 28px;
+    color: var(--text-color);
+}
+.caption {
+    font-size: 1.6rem;
+    line-height: 22px;
+    font-weight: 100;
+    padding-right: 25px;
+    color: var(--text-color);
+}
+.caption-music {
+    display: flex;
+
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 22px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    color: var(--text-color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.icon-music {
+    margin-top: 2px;
+}
+
+.btn {
+    width: 88px;
+    height: 28px;
+
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 22px;
+    cursor: pointer;
+
+    border-radius: 4px;
+    padding: 6px 18px;
+    background-color: var(--btn-bg-outline);
+    border: 1px solid var(--primary);
+    font-family: 'Proxima Nova', sans-serif;
+    &:hover {
+        border-color: currentColor;
+        background-color: var(--btn-hov-bg);
+    }
+}
+
+.wrap-content {
+    position: relative;
+    display: flex;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 20px;
+    align-items: center;
+}
+//btn
+
+.btn-social {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 8px 0 6px;
+}
+
+//icon
+
+.icon-social {
+    width: 24px;
+    height: 24px;
+}
+.count {
+    color: var(--background-gray-color-75);
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+}
+//control video
+.vid {
+    border-radius: 9px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrap-share {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+///////////////////prewview account
+.wrapper-popper {
+    width: 320px;
+    box-sizing: border-box;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px;
+    border-radius: 8px;
+}
+.wrapper-prev {
+}
+
+.btn-prev {
+    min-width: 106px;
+    min-height: 28px;
+
+    &:hover {
+        background-color: var(--btn-hov-bg);
+    }
+}
+.avatar-prev {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.head-prev {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.nickname-prev {
+    color: rgb(22, 24, 35);
+    font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 22px;
+    cursor: pointer;
+}
+.name-prev {
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 20px;
+    cursor: pointer;
+}
+.stat-prev {
+    margin-top: 8px;
+}
+
+.value-prev {
+    font-weight: 700;
+    margin-right: 6px;
+    font-size: 1.7rem;
+    line-height: 20px;
+    color: var(--text-color);
+}
+.label-prev {
+    color: var(--background-gray-color-75);
+    font-size: 1.7rem;
+    line-height: 20px;
+    font-weight: 400;
+}
+.value-prev ~ .value-prev {
+    margin-left: 20px;
+}
+
+.bio-prev {
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+}

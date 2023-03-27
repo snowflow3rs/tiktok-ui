@@ -13,9 +13,9 @@
     border: 1px solid transparent;
     font-family: 'Proxima Nova', sans-serif;
 
-    + .wrapper {
-        // margin-left: 16px;
-    }
+    // + .wrapper {
+    //     // margin-left: 16px;
+    // }
 
     // &.disabled {
     //     opacity: 0.5;
@@ -25,11 +25,11 @@
 //icon type
 .left-icon + .title,
 .title + .right-icon {
-    margin-left: 8px;
+    margin-left: 6px;
 }
 .icon {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.6rem;
     display: flex;
     justify-content: flex-start;
 }
@@ -63,12 +63,12 @@
 }
 
 .outline {
-    border-color: var(--primary);
     color: var(--primary);
+    border: 1px solid var(--primary);
+    background-color: var(--btn-bg-outline);
 
     &:hover {
-        border-color: currentColor;
-        background-color: rgba(254, 44, 85, 0.06);
+        background-color: var(--btn-hov-bg);
     }
 }
 .text {
@@ -84,4 +84,9 @@
 }
 .large {
     min-width: 168px;
+    width: 100%;
+}
+
+.title {
+    display: flex;
 }

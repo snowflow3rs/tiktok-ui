@@ -1,0 +1,100 @@
+.wrapper {
+    height: 60px;
+    box-shadow: var(--box-shadow-header);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background-color-white);
+    z-index: 10;
+}
+
+.inner {
+    height: 100%;
+    width: 1150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 0 22px;
+
+    &.stretch {
+        width: 100%;
+    }
+}
+.logo {
+    min-width: 300px;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+// Action header
+.action {
+    display: flex;
+    width: 265px;
+    align-items: center;
+    justify-content: space-between;
+    height: 36px;
+}
+.cuz-color {
+    width: 114px;
+    color: var(--text-color);
+    background-color: var(--up-bg) !important;
+    border: 1px solid rgba(22, 24, 35, 0.12) !important;
+
+    &:hover {
+        background-color: var(--background-gray-color-03) !important;
+    }
+}
+//icon
+
+.inbox,
+.message {
+    background: transparent;
+    color: var(--text-color);
+    padding: 3px 3px 0;
+    cursor: pointer;
+}
+
+.message {
+    margin-left: 18px;
+}
+.inbox {
+    position: relative;
+    margin-left: 7px;
+}
+
+.badge {
+    position: absolute;
+    top: -4px;
+    right: -5px;
+    padding: 0px 6px;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    font-family: var(--font-family);
+    background-color: var(--primary);
+}
+
+.setting {
+    background-color: transparent;
+    color: var(--text-color);
+    margin-left: 16px;
+    padding: 4px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 24px;
+}

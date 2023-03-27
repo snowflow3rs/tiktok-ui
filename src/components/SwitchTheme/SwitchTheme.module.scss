@@ -1,0 +1,43 @@
+.wrapper {
+    width: 44px;
+    height: 24px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    width: 44px;
+    height: 24px;
+    background: rgba(22, 24, 35, 0.12);
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    margin-left: 50px;
+}
+
+.ball {
+    width: 20px;
+    height: 20px;
+    // background: rgb(11, 224, 155);
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball {
+    transform: translateX(20px);
+}
+
+.checkbox:checked ~ .label {
+    background: rgb(11, 224, 155);
+}
