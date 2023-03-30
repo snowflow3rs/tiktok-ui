@@ -5,23 +5,26 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
 import Img from '~/components/Image/Image';
 import images from '~/assets/images';
-
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ModalContext } from '~/hooks';
 const cx = classNames.bind(styles);
 
 function PreviewAccounts({ data }) {
+    const context = useContext(ModalContext);
     return (
         <div className={cx('wrapper')}>
             <header className={cx('head')}>
                 <Img className={cx('avatar')} src={data.avatar} alt={images.errImg} />
-                <Button className={cx('btn')} primary>
+                <Button onClick={context.handleShowModal} className={cx('btn')} primary>
                     Follow
                 </Button>
             </header>
             <div className={cx('body')}>
-                <p className={cx('infor')}>
+                <Link to={`/@${data.nickname}`} state={data} className={cx('infor')}>
                     <strong className={cx('nickname')}>{data.nickname}</strong>
                     {data.tick && <FontAwesomeIcon icon={faCheckCircle} className={cx('icon')} />}
-                </p>
+                </Link>
                 <p className={cx('name')}>
                     {data.first_name} {data.last_name}
                 </p>

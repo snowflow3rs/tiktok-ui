@@ -15,6 +15,7 @@
     height: 44px;
     object-fit: cover;
     border-radius: 50%;
+    cursor: pointer;
 }
 .btn {
     width: 106px;
@@ -23,6 +24,7 @@
 .infor {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .nickname {
     color: var(--text-color);
@@ -39,7 +41,7 @@
 }
 .name {
     color: var(--text-color);
-
+    cursor: pointer;
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 20px;

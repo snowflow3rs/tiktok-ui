@@ -2,11 +2,11 @@ import classNames from 'classnames/bind';
 import styles from './Video.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faHeart } from '@fortawesome/free-solid-svg-icons';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { TagMusicIcon } from '~/components/Icons';
 import { BsFillChatDotsFill } from 'react-icons/bs';
 import { RiShareForwardFill } from 'react-icons/ri';
-import ControlVid from '../ControlVid/ControlVid';
+
 import images from '~/assets/images';
 import Img from '~/components/Image/Image';
 import ShareVideos from '~/components/ShareVideos';
@@ -16,17 +16,84 @@ import Button from '~/components/Button';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { ModalContext } from '~/hooks';
+//
+import { faFontAwesome, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { MuteIcon, SoundIcon } from '~/components/Icons';
+import useElementOnScreen from '~/hooks/IntersectionObserver';
+
 const cx = classNames.bind(styles);
 
-function Video({ data }) {
+function Video({ data, muted, toggleMuted }) {
     const vidRef = useRef();
     const context = useContext(ModalContext);
 
-    useEffect(() => {
-        const video = vidRef.current;
+    const [playing, setPlaying] = useState(false);
+    const [volume, setVolume] = useState(1);
 
-        video.muted = false;
-    }, []);
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+    };
+    const isVisibile = useElementOnScreen(options, vidRef);
+
+    useEffect(() => {
+        if (muted) {
+            vidRef.current.volume = 0;
+        } else {
+            vidRef.current.volume = volume;
+        }
+    });
+
+    useEffect(() => {
+        if (isVisibile) {
+            if (!playing) {
+                vidRef.current.play();
+                setPlaying(true);
+                vidRef.current.muted = false;
+            }
+        } else {
+            if (playing) {
+                vidRef.current.pause();
+                setPlaying(false);
+                vidRef.current.muted = true;
+            }
+        }
+    }, [isVisibile]);
+
+    //handle toggle play pause video
+    const playVideo = () => {
+        if (playing === false) {
+            vidRef.current.play();
+            setPlaying(true);
+        }
+    };
+
+    const pauseVideo = () => {
+        if (playing === true) {
+            vidRef.current.pause();
+            setPlaying(false);
+        }
+    };
+
+    const togglePlayVideo = () => {
+        if (playing === false) {
+            playVideo();
+        } else {
+            pauseVideo();
+        }
+    };
+
+    const handleVolumeChange = (e) => {
+        const newVolume = e.target.value;
+        setVolume(newVolume);
+        if (muted) {
+            vidRef.current.muted = false;
+            vidRef.current.volume = newVolume;
+        } else {
+            vidRef.current.volume = newVolume;
+        }
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -100,8 +167,57 @@ function Video({ data }) {
                         <span>original sound - {data.music}</span>
                     </a>
                     <div className={cx('wrap-content')}>
-                        <video ref={vidRef} width={336} height={600} src={data.file_url} className={cx('vid')} loop />
-                        <ControlVid vidRef={vidRef} data={data} />
+                        <div className={cx('video-card')}>
+                            <video
+                                ref={vidRef}
+                                style={
+                                    data?.meta.video.resolution_x < data?.meta.video.resolution_y
+                                        ? { width: '336px' }
+                                        : { width: '556px' }
+                                }
+                                height={600}
+                                src={data.file_url}
+                                className={cx('vid')}
+                                loop
+                            />
+                            <div className={cx('content')}>
+                                <div onClick={togglePlayVideo}>
+                                    {!playing ? (
+                                        <span className={cx('play')}>
+                                            <FontAwesomeIcon icon={faPlay} />
+                                        </span>
+                                    ) : (
+                                        <span className={cx('pause')}>
+                                            <FontAwesomeIcon icon={faPause} />
+                                        </span>
+                                    )}
+                                </div>
+
+                                <span className={cx('report')}>
+                                    <FontAwesomeIcon icon={faFontAwesome} className={cx('ri')} />
+                                    <span className={cx('rp')}>Report</span>
+                                </span>
+
+                                <div className={cx('speaker', { active: muted })}>
+                                    <span className={cx('sound')} onClick={toggleMuted}>
+                                        {muted ? <MuteIcon /> : <SoundIcon />}
+                                    </span>
+
+                                    <div className={cx('volume')}>
+                                        <input
+                                            className={cx('range')}
+                                            type="range"
+                                            min="0"
+                                            max="1"
+                                            step="0.1"
+                                            orient="vertical"
+                                            value={volume}
+                                            onChange={handleVolumeChange}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div className={cx('social')}>
                             <button className={cx('btn-social')} onClick={context.handleShowModal}>
                                 <FontAwesomeIcon icon={faHeart} className={cx('icon-social')} />

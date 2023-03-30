@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 function Main() {
     const [videos, setVideos] = useState([]);
     const [page, setPage] = useState(1);
+    const [muted, setMuted] = useState(true);
     useEffect(() => {
         const fetchVideos = async () => {
             const result = await videoServices.loadVideos('for-you', page);
@@ -29,11 +30,17 @@ function Main() {
             setPage((page) => page + 1);
         }
     }
-
+    const toggleMuted = () => {
+        if (muted) {
+            setMuted(false);
+        } else {
+            setMuted(true);
+        }
+    };
     return (
         <div className={cx('wrapper')}>
             {videos.map((result, index) => (
-                <Video key={index} data={result} />
+                <Video key={index} data={result} muted={muted} toggleMuted={toggleMuted} />
             ))}
         </div>
     );

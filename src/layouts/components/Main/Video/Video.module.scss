@@ -146,12 +146,6 @@
     line-height: 17px;
     text-align: center;
 }
-//control video
-.vid {
-    border-radius: 9px;
-    position: relative;
-    overflow: hidden;
-}
 
 .wrap-share {
     display: flex;
@@ -234,4 +228,115 @@
     padding-top: 16px;
     margin-top: 16px;
     border-top: 1px solid rgba(22, 24, 35, 0.12);
+}
+//control video
+.vid {
+    border-radius: 8px;
+    overflow: hidden;
+}
+.video-card {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    &:hover {
+        .play,
+        .pause,
+        .report,
+        .speaker {
+            opacity: 1;
+        }
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.content {
+}
+.play,
+.pause {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 1.8rem;
+    opacity: 0;
+    color: rgb(255, 255, 255);
+}
+.report {
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    opacity: 0;
+    .rp {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 22px;
+    }
+
+    .ri {
+        margin-right: 4px;
+    }
+}
+.speaker {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    opacity: 0;
+    &.active {
+        opacity: 1;
+
+        .volume {
+            opacity: 0;
+        }
+    }
+    &:hover {
+        .volume {
+            display: block;
+        }
+    }
+}
+.sound {
+    width: 20px;
+    height: 20px;
+}
+.volume {
+    cursor: initial;
+    background-color: var(--background-gray-color-34);
+    border-radius: 32px;
+    width: 24px;
+    height: 64px;
+    margin-bottom: 5px;
+}
+.range {
+    background-color: #fff;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 56px;
+    right: -12px;
+    width: 48px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
 }
