@@ -1,6 +1,7 @@
 .wrapper {
     padding: 0 24px 67px 16px;
     margin-left: -90px;
+    background-color: var(--background-color-white);
 }
 .header {
     position: sticky;
@@ -63,4 +64,42 @@
     padding: 16px 0;
     cursor: pointer;
     color: var(--text-color);
+}
+.tab-item:nth-child(1) {
+    &:hover {
+        ~ .tab-line {
+            transform: translateX(-150%) !important;
+        }
+    }
+    &.active {
+        ~ .tab-line {
+            transform: translateX(-150%);
+        }
+    }
+}
+
+.tab-item:nth-child(2) {
+    &:hover {
+        ~ .tab-line {
+            transform: translateX(0%) !important;
+        }
+    }
+    &.active {
+        ~ .tab-line {
+            transform: translateX(0%);
+        }
+    }
+}
+
+.tab-item:nth-child(3) {
+    &:hover {
+        ~ .tab-line {
+            transform: translateX(150%) !important;
+        }
+    }
+    &.active {
+        ~ .tab-line {
+            transform: translateX(150%);
+        }
+    }
 }

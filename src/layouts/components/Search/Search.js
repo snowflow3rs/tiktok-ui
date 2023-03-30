@@ -71,6 +71,9 @@ function Search() {
         inputRef.current.blur();
         setShowResult(false);
     };
+    const handleHideSearch = () => {
+        setShowResult(false);
+    };
     return (
         <div>
             <HeadlessTippy
@@ -85,6 +88,7 @@ function Search() {
                                 className={cx('text-result')}
                             >
                                 <FontAwesomeIcon icon={faMagnifyingGlass} className={cx('magicon')} />
+
                                 <span className={cx('text')}>{searchValue}</span>
                             </Link>
                             <h4 className={cx('search-title')}>Account</h4>
@@ -121,9 +125,15 @@ function Search() {
 
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faCircleNotch} />}
 
-                    <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
+                    <Link state={searchValue} to={`${config.routes.search}?q=${searchValue}`}>
+                        <button
+                            className={cx('search-btn')}
+                            onClick={handleHideSearch}
+                            onMouseDown={(e) => e.preventDefault()}
+                        >
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
+                    </Link>
                 </div>
             </HeadlessTippy>
         </div>

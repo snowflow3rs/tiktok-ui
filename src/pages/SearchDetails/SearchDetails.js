@@ -33,12 +33,12 @@ function SearchDetails() {
     return (
         <div className={cx('wrapper')}>
             <header className={cx('header')}>
-                <ul className={cx('nav')}>
-                    <li className={cx('tab-item')}>Top</li>
-                    <li className={cx('tab-item', 'active')}>Accounts</li>
-                    <li className={cx('tab-item')}>Videos</li>
-                </ul>
-                <div ref={tabLineRef} className={cx('tab-line')}></div>
+                <div className={cx('nav')}>
+                    <div className={cx('tab-item')}>Top</div>
+                    <div className={cx('tab-item', 'active')}>Accounts</div>
+                    <div className={cx('tab-item')}>Videos</div>
+                    <div ref={tabLineRef} className={cx('tab-line')}></div>
+                </div>
             </header>
 
             <section className={cx('content')}>
