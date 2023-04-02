@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './VideoProfile.module.scss';
-import images from '~/assets/images';
+
 import { useRef } from 'react';
 import { PlayProfile } from '~/components/Icons';
 const cx = classNames.bind(styles);

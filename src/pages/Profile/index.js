@@ -3,14 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './Profile.module.scss';
 import { useLocation } from 'react-router-dom';
 import Button from '~/components/Button';
-import {
-    BlockIcon,
-    LinkProfileIcon,
-    OptionProfileIcon,
-    ReportIcon,
-    ShareProfileIcon,
-    TopMenu,
-} from '~/components/Icons';
+import { LinkProfileIcon, OptionProfileIcon, ReportIcon, ShareProfileIcon, TopMenu } from '~/components/Icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBan, faCheckCircle } from '@fortawesome/free-solid-svg-icons';

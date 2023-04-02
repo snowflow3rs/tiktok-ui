@@ -16,7 +16,7 @@ import Button from '~/components/Button';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { ModalContext } from '~/hooks';
-//
+
 import { faFontAwesome, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { MuteIcon, SoundIcon } from '~/components/Icons';
 import useElementOnScreen from '~/hooks/IntersectionObserver';

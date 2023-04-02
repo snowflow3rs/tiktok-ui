@@ -5,7 +5,6 @@ import Tippy from '@tippyjs/react/headless';
 import { WrapperPop as PopperWrapper } from '~/components/Popper';
 
 import {
-    ArrowDown,
     EmailIcon,
     EmbedIcon,
     FbIcon,
