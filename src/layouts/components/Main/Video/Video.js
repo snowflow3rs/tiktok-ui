@@ -16,7 +16,7 @@ import Button from '~/components/Button';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { ModalContext } from '~/hooks';
-
+//
 import { faFontAwesome, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { MuteIcon, SoundIcon } from '~/components/Icons';
 import useElementOnScreen from '~/hooks/IntersectionObserver';
@@ -171,7 +171,7 @@ function Video({ data, muted, toggleMuted }) {
                             <video
                                 ref={vidRef}
                                 style={
-                                    data?.meta.video.resolution_x < data?.meta.video.resolution_y
+                                    data.meta.video.resolution_x < data.meta.video.resolution_y
                                         ? { width: '336px' }
                                         : { width: '556px' }
                                 }

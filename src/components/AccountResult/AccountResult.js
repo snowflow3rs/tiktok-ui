@@ -16,11 +16,9 @@ function AccountResult({ data }) {
                     {data.tick && <FontAwesomeIcon icon={faCheckCircle} className={cx('icon')} />}
                 </h3>
                 <p className={cx('info')}>
-                    <span className={cx('infor-name')}>
-                        {data?.full_name || `${data?.first_name} ${data?.last_name}`}
-                    </span>
+                    <span className={cx('infor-name')}>{data.full_name || `${data.first_name} ${data.last_name}`}</span>
                     {' · '}
-                    <strong className={cx('count-follower')}>{data?.followers_count}</strong> Follower
+                    <strong className={cx('count-follower')}>{data.followers_count}</strong> Follower
                 </p>
                 <p className={cx('bio')}>{data.bio}</p>
             </div>
