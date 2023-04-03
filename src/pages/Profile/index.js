@@ -28,6 +28,7 @@ function Profile() {
     const context = useContext(ModalContext);
     const location = useLocation();
     const data = location.state;
+
     const [videos, setVideos] = useState([]);
     useEffect(() => {
         fetch(`https://tiktok.fullstack.edu.vn/api/users/@${data.nickname}`)

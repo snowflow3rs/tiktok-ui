@@ -115,7 +115,7 @@ function Video({ data, muted, toggleMuted }) {
                                         >
                                             <Img
                                                 className={cx('avatar-prev')}
-                                                src={data.user.avatar}
+                                                src={data?.user.avatar}
                                                 alt={images.errImg}
                                             />
                                             <Button className={cx('btn-prev')} outline>
@@ -125,7 +125,7 @@ function Video({ data, muted, toggleMuted }) {
                                         <div className={cx('body-prev')}>
                                             <p className={cx('infor-prev')}>
                                                 <strong className={cx('nickname-prev')}>{data?.user.nickname}</strong>
-                                                {data.tick && (
+                                                {data?.user.tick && (
                                                     <FontAwesomeIcon icon={faCheckCircle} className={cx('icon')} />
                                                 )}
                                             </p>
@@ -153,25 +153,25 @@ function Video({ data, muted, toggleMuted }) {
                 <div className={cx('wrap-infor')}>
                     <Link to={`/@${data?.user.nickname}`} state={data?.user} className={cx('user-infor')}>
                         <p href="/" className={cx('nickname')}>
-                            {data.user.nickname}
+                            {data?.user.nickname}
                         </p>
-                        {data.user.tick && <FontAwesomeIcon icon={faCheckCircle} className={cx('icon')} />}
+                        {data?.user.tick && <FontAwesomeIcon icon={faCheckCircle} className={cx('icon')} />}
                         <h4 className={cx('name')}>
-                            {data.user.first_name}
-                            {data.user.last_name}
+                            {data?.user.first_name}
+                            {data?.user.last_name}
                         </h4>
                     </Link>
-                    <span className={cx('caption')}>{data.description}</span>
+                    <span className={cx('caption')}>{data?.description}</span>
                     <a href="/" className={cx('caption-music')}>
                         <TagMusicIcon className={cx('icon-music')} />
-                        <span>original sound - {data.music}</span>
+                        <span>original sound - {data?.music}</span>
                     </a>
                     <div className={cx('wrap-content')}>
                         <div className={cx('video-card')}>
                             <video
                                 ref={vidRef}
                                 style={
-                                    data.meta.video.resolution_x < data.meta.video.resolution_y
+                                    data?.meta.video.resolution_x < data?.meta.video.resolution_y
                                         ? { width: '336px' }
                                         : { width: '556px' }
                                 }
@@ -222,17 +222,17 @@ function Video({ data, muted, toggleMuted }) {
                             <button className={cx('btn-social')} onClick={context.handleShowModal}>
                                 <FontAwesomeIcon icon={faHeart} className={cx('icon-social')} />
                             </button>
-                            <span className={cx('count')}>{data.likes_count}</span>
+                            <span className={cx('count')}>{data?.likes_count}</span>
                             <button className={cx('btn-social')} onClick={context.handleShowModal}>
                                 <BsFillChatDotsFill className={cx('icon-social')} />
                             </button>
-                            <span className={cx('count')}>{data.comments_count}</span>
+                            <span className={cx('count')}>{data?.comments_count}</span>
                             <ShareVideos arrowDown offset={[90, 10]}>
                                 <div className={cx('wrap-share')}>
                                     <button className={cx('btn-social')}>
                                         <RiShareForwardFill className={cx('icon-social')} />
                                     </button>
-                                    <span className={cx('count')}>{data.shares_count}</span>
+                                    <span className={cx('count')}>{data?.shares_count}</span>
                                 </div>
                             </ShareVideos>
                         </div>
