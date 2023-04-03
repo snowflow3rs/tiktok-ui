@@ -109,8 +109,8 @@ function Video({ data, muted, toggleMuted }) {
                                 <PopperWrapper className={cx('wrapper-popper')}>
                                     <div className={cx('wrapper-prev')}>
                                         <Link
-                                            to={`/@${data.user.nickname}`}
-                                            state={data.user}
+                                            to={`/@${data?.user.nickname}`}
+                                            state={data?.user}
                                             className={cx('head-prev')}
                                         >
                                             <Img
@@ -124,34 +124,34 @@ function Video({ data, muted, toggleMuted }) {
                                         </Link>
                                         <div className={cx('body-prev')}>
                                             <p className={cx('infor-prev')}>
-                                                <strong className={cx('nickname-prev')}>{data.user.nickname}</strong>
+                                                <strong className={cx('nickname-prev')}>{data?.user.nickname}</strong>
                                                 {data.tick && (
                                                     <FontAwesomeIcon icon={faCheckCircle} className={cx('icon')} />
                                                 )}
                                             </p>
                                             <p className={cx('name-prev')}>
-                                                {data.user.first_name} {data.user.last_name}
+                                                {data?.user.first_name} {data?.user.last_name}
                                             </p>
                                             <p className={cx('stat-prev')}>
-                                                <span className={cx('value-prev')}> {data.user.followers_count}</span>
+                                                <span className={cx('value-prev')}> {data?.user.followers_count}</span>
                                                 <span className={cx('label-prev')}>Followers</span>
-                                                <span className={cx('value-prev')}>{data.user.likes_count}</span>
+                                                <span className={cx('value-prev')}>{data?.user.likes_count}</span>
                                                 <span className={cx('label-prev')}>Likes</span>
                                             </p>
-                                            <p className={cx('bio-prev')}>{data.user.bio}</p>
+                                            <p className={cx('bio-prev')}>{data?.user.bio}</p>
                                         </div>
                                     </div>
                                 </PopperWrapper>
                             </div>
                         )}
                     >
-                        <Link to={`/@${data.user.nickname}`} state={data.user}>
-                            <Img className={cx('avatar')} src={data.user.avatar} alt={images.errImg} />
+                        <Link to={`/@${data?.user.nickname}`} state={data?.user}>
+                            <Img className={cx('avatar')} src={data?.user.avatar} alt={images.errImg} />
                         </Link>
                     </Tippy>
                 </div>
                 <div className={cx('wrap-infor')}>
-                    <Link to={`/@${data.user.nickname}`} state={data.user} className={cx('user-infor')}>
+                    <Link to={`/@${data?.user.nickname}`} state={data?.user} className={cx('user-infor')}>
                         <p href="/" className={cx('nickname')}>
                             {data.user.nickname}
                         </p>
@@ -176,7 +176,7 @@ function Video({ data, muted, toggleMuted }) {
                                         : { width: '556px' }
                                 }
                                 height={600}
-                                src={data.file_url}
+                                src={data?.file_url}
                                 className={cx('vid')}
                                 loop
                             />

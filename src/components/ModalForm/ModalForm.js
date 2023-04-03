@@ -127,7 +127,7 @@ function ModalForm({ onHide }) {
                         <h2 className={cx('heading')}>{filter.title}</h2>
 
                         <div className={cx('list-log')}>
-                            {filter.contents.map((content, index) => (
+                            {filter.contents?.map((content, index) => (
                                 <div className={cx('items')} key={index} onClick={content.onClick}>
                                     <span className={cx('icon')}>{content.icon}</span>
                                     <p className={cx('platform')}>{content.title}</p>

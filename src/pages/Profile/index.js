@@ -3,7 +3,14 @@ import classNames from 'classnames/bind';
 import styles from './Profile.module.scss';
 import { useLocation } from 'react-router-dom';
 import Button from '~/components/Button';
-import { LinkProfileIcon, OptionProfileIcon, ReportIcon, ShareProfileIcon, TopMenu } from '~/components/Icons';
+import {
+    LinkProfileIcon,
+    LockIcon,
+    OptionProfileIcon,
+    ReportIcon,
+    ShareProfileIcon,
+    TopMenu,
+} from '~/components/Icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBan, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -111,7 +118,10 @@ function Profile() {
             <div className={cx('videos-container')}>
                 <div className={cx('tabs-list')}>
                     <div className={cx('tab-items')}>Videos</div>
-                    <div className={cx('tab-items')}>Liked</div>
+                    <div className={cx('tab-items')}>
+                        <LockIcon />
+                        <span>Liked</span>
+                    </div>
                     <div className={cx('underline')} />
                 </div>
                 <div className={cx('vids')}>

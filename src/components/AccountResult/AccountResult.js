@@ -8,7 +8,7 @@ import images from '~/assets/images';
 const cx = classNames.bind(styles);
 function AccountResult({ data }) {
     return (
-        <Link className={cx('result-item')} to={`/@${data.nickname}`} state={data}>
+        <Link className={cx('result-item')} to={`/@${data?.nickname}`} state={data}>
             <Img className={cx('avatar')} src={data.avatar} alt={images.errImg} />
             <div className={cx('body')}>
                 <h3 className={cx('username')}>
