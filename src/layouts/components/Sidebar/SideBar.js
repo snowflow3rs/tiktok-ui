@@ -13,6 +13,7 @@ import FooterSideBar from '~/components/FooterSidebar';
 const cx = classNames.bind(styles);
 
 function SideBar({ shrink }) {
+    const isUser = false;
     return (
         <aside className={cx('wrapper', { shrink: shrink })}>
             <div className={cx('inner')}>
@@ -37,8 +38,11 @@ function SideBar({ shrink }) {
                     />
                 </Menu>
                 <LogSideBar title="Log in to follow creators, like videos, and view comments." />
-                <SuggestedAccounts title="Suggested accounts" />
-                {/* <FollowingAccounts title="Following accounts" /> */}
+                {isUser ? (
+                    <FollowingAccounts title="Following accounts" />
+                ) : (
+                    <SuggestedAccounts title="Suggested accounts" />
+                )}
 
                 <Discover title="Discover" />
                 <FooterSideBar />

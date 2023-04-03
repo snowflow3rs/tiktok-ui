@@ -11,7 +11,7 @@ import GetApp from './components/GetApp';
 function App() {
     const { theme } = useContext(ThemeContext);
     return (
-        <Router>
+        <Router basename="tiktok-ui">
             <div className="App" data-theme={theme}>
                 <GetApp />
                 <Routes>
